@@ -33,6 +33,14 @@ Installs the most recent version of [Phusion Passenger][2] (5.0.26 as of March
 29, 2016). Configures Apache with mod_passenger to serve the Rails app found in
 `/apps/src` on port 80.
 
+### Javascript Runtime
+
+By default, Rails requires a Javascript runtime to operate. While such a runtime is
+included on OS X and Windows, for Linux machines (like this Vagrant box), you must
+modify the `Gemfile` created by `rails new` to uncomment the line including the `therubyracer` gem, and then run `bundle install` to update your gems. See the
+[Starting up the Web Server][3] section of the official Ruby on Rails tutorial for
+more details.
+
 ### Reloading with a Different App
 
 If you wish to change the Rails app that is loaded by Passenger, you can run the
@@ -48,3 +56,4 @@ The `railsapp.sh` ensures that the Apache virtual host is configured, and runs
 
 [1]: https://atlas.hashicorp.com/peichman-umd/boxes/ruby/versions/1.0.0
 [2]: https://www.phusionpassenger.com/
+[3]: http://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server
