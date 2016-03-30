@@ -16,6 +16,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", path: "scripts/passenger.sh", privileged: true
+  config.vm.provision "shell", path: "scripts/nodejs.sh", privileged: true
   config.vm.provision "shell", path: "scripts/firewall.sh", privileged: true
   if have_app
     config.vm.provision "shell", path: "scripts/railsapp.sh", privileged: false
